@@ -5,6 +5,7 @@ import com.atypon.uniapp.data.repository.UserDataRepo;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.validation.BindingResult;
@@ -13,7 +14,7 @@ import javax.transaction.Transactional;
 
 @Repository
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class UserConfig {
+public class UserAccountConfig {
 
 
     private UserDataRepo userRepo;
@@ -21,6 +22,7 @@ public class UserConfig {
 
 
     @Transactional
+    @Modifying
     public String addUser(User user, BindingResult result){
 
         if (result.hasErrors()){
@@ -32,6 +34,7 @@ public class UserConfig {
 
 
     @Transactional
+    @Modifying
     public String updateUser(User user, BindingResult result){
         if (result.hasErrors()){
             return "/Admin/UpdateUser";

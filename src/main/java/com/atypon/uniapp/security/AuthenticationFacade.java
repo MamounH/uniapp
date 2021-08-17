@@ -1,6 +1,5 @@
 package com.atypon.uniapp.security;
 
-import com.atypon.uniapp.security.UserPrincipal;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;

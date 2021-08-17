@@ -1,7 +1,7 @@
 package com.atypon.uniapp.controllers.users.admin.users;
 
 
-import com.atypon.uniapp.data.UserConfig;
+import com.atypon.uniapp.data.UserAccountConfig;
 import com.atypon.uniapp.data.repository.UserDataRepo;
 import com.atypon.uniapp.data.entity.User;
 import lombok.AllArgsConstructor;
@@ -23,7 +23,7 @@ public class UsersController {
 
     private PasswordEncoder passwordEncoder;
     private UserDataRepo userDataRepo;
-    private UserConfig userService;
+    private UserAccountConfig userService;
 
     @GetMapping(value = "Users")
     protected String showAllUsers(ModelMap modelMap)  {
@@ -57,17 +57,28 @@ public class UsersController {
 
     }
 
-    ///edit here
     @PostMapping(value = "UpdateUser")
     protected String updateUser(@ModelAttribute @Valid User user, BindingResult result) {
 
-            if (userDataRepo.existsByEmail(user.getEmail())) {
-                result.rejectValue("email", "error.user", "An account already exists for this email.");
-                return "/Admin/UpdateUser";
-            } else {
-                return userService.updateUser(user,result);
-            }
+        if (isValidEmail(user,result)){
+            return userService.updateUser(user,result);
+        } else
+        {
+            return "/Admin/UpdateUser";
+        }
 
+    }
+
+
+    private boolean isValidEmail(User user, BindingResult result){
+
+        if (userDataRepo.existsByEmail(user.getEmail())) {
+            if(!userDataRepo.findById(user.getId()).getEmail().equalsIgnoreCase(user.getEmail())) {
+                result.rejectValue("email", "error.user", "An account already exists for this email.");
+                return false;
+            }
+        }
+        return true;
     }
 
     @GetMapping(value = "DeleteUser")

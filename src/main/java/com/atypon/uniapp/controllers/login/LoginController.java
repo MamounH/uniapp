@@ -25,7 +25,7 @@ public class LoginController {
 		Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
 
 		if (!authentication.isAuthenticated() || roles.contains("ROLE_ANONYMOUS")) {
-			return "redirect:login?error=true";
+			return "login";
 		}
 		return directUserToHomePage();
 

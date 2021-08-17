@@ -23,11 +23,5 @@ public interface UserDataRepo extends JpaRepository<User,Integer> {
     Set<User> getPossibleStudents(int id);
 
 
-    @Transactional
-    @Modifying
-    @Query("UPDATE User "+"SET first_name=?1, last_name=?2, email=?3 "+
-            "WHERE id=?4")
-    void update(String fName, String lName,String email,int id);
-
 
 }
