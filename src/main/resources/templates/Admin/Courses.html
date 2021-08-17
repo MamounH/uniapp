@@ -1,0 +1,41 @@
+<div th:replace="includes.html :: header"></div>
+
+
+<div th:replace="includes.html :: AdminNavBar"></div>
+
+
+<div class="container">
+
+    <table class = "table table-striped table-hover">
+        <thead>
+        <th>Course ID</th>
+        <th>Course Name</th>
+        <th>Instructor ID</th>
+        <th>Instructor Name</th>
+        </thead>
+        <tbody>
+
+        <tr th:each="course : ${list}">
+
+                <td th:text="${course.id}"/>
+                <input type="hidden" name="id" th:value="${course.id}">
+                <td th:text="${course.name}"/>
+                <td th:text="${course.instructorId}"/>
+                <td th:text="${course.instructorName}"/>
+                <td><a class="btn btn-success" th:href="@{/Admin/AddStudents/(id=${course.id})}">Add Students</a></td>
+                <td><a class="btn btn-warning" th:href="@{/Admin/RemoveStudents/(id=${course.id})}">Remove Students</a></td>
+                <td><a class="btn btn-info" th:href="@{/Admin/UpdateCourse/(id=${course.id})}">Update Course</a></td>
+                <td><a class="btn btn-danger" th:href="@{/Admin/DeleteCourse/(id=${course.id})}"
+                       onclick="if (!(confirm('are you sure you want to delete this course'))) return false"
+                >Delete Course</a></td>
+        </tr>
+
+        </tbody>
+    </table>
+    <a class="btn btn-success" th:href="@{/Admin/AddCourse}">Add New Course</a>
+
+</div>
+
+
+
+<div th:replace="includes.html :: footer"></div>

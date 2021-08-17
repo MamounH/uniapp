@@ -1,0 +1,44 @@
+<div th:replace="includes.html :: header"></div>
+
+
+<div th:replace="includes.html :: AdminNavBar"></div>
+
+<div class="container">
+
+
+<form th:action="@{/Admin/AddCourse}"  method="POST">
+
+
+    <fieldset class="form-group">
+        <label>Course Name</label>
+        <input th:name="name" type="text" class="form-control" required/> <BR/>
+
+    </fieldset>
+
+    <fieldset class="form-group">
+
+       <label>Select Course Instructor</label>
+        <select class="form-control" th:id="instructor_id" th:name="instructor_id">
+                <option value="">instructors</option>
+                <option th:each="instructor : ${list}"
+                        th:name="id"
+                        th:value="${instructor.id}"
+                        th:text="${instructor.first_name}+' '+${instructor.last_name}"></option>
+            </select>
+    </fieldset>
+
+
+
+    <a class="btn btn-success" th:href="@{/Admin/Courses}">Cancel Adding</a>
+    <input  class="btn btn-success" name="add" type="submit" />
+
+
+</form>
+
+
+
+</div>
+
+
+
+<div th:replace="includes.html :: footer"></div>

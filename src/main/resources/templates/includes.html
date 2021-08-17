@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+
+<div th:fragment="header" >
+
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+
+        <title>Atypon University</title>
+        <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet"  type="text/css" th:href="@{/style/header.css}" />
+
+
+    </head>
+
+    <body>
+
+</div>
+
+
+<div th:fragment="StuNavBar" >
+
+    <nav sec:authorize="hasRole('ROLE_STUDENT')" class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/MamounH/Logo/main/220px-Atypon.png" class="img img-responsive center-block"/>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link"  th:href="@{/Student/StudentCourses}">
+                        <i class="fa fa-graduation-cap">
+                        </i>
+                        My Marks
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/MamounH">
+                        <i class="fa fa-github">
+                        </i>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}" >
+                        <i class="fa fa-sign-out">
+                        </i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+
+</div>
+
+
+<div th:fragment="InstNavBar">
+
+
+    <nav sec:authorize="hasRole('ROLE_INSTRUCTOR')" class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/MamounH/Logo/main/220px-Atypon.png" class="img img-responsive center-block"/>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/Instructor/InstructorCourses}">
+                        <i class="fa fa-university">
+                        </i>
+                        My Courses
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/MamounH">
+                        <i class="fa fa-github">
+                        </i>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}">
+                        <i class="fa fa-sign-out">
+                        </i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+
+
+</div>
+
+
+<div th:fragment="AdminNavBar">
+
+
+    <nav sec:authorize="hasRole('ROLE_ADMIN')" class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/MamounH/Logo/main/220px-Atypon.png" class="img img-responsive center-block"/>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/Admin/Users}">
+                        <i class="fa fa-user-circle"></i>
+                        Users
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/Admin/Courses}">
+                        <i class="fa fa-university">
+                        </i>
+                        Courses
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/MamounH">
+                        <i class="fa fa-github">
+                        </i>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}">
+                        <i class="fa fa-sign-out">
+                        </i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+
+
+</div>
+
+<div th:fragment="footer" >
+
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    </body>
+
+    </html>
+
+</div>
+
+

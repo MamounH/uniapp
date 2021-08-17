@@ -1,0 +1,55 @@
+<div th:replace="includes.html :: header"></div>
+
+
+<div th:replace="includes.html :: AdminNavBar"></div>
+
+
+<style>
+    .table-wrapper {
+        max-height: 450px;
+        overflow: scroll;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1.5);
+    }
+</style>
+
+<div class="container">
+
+    <form method="POST" th:action="@{/Admin/RemoveStudents}">
+        <div class="table-wrapper">
+
+
+            <table class = "table table-striped table-hover">
+                <thead>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Student Email</th>
+                <th>Student Grade</th>
+                <th>Remove From Course</th>
+                </thead>
+                <tbody>
+                <tr th:each="student : ${list}">
+                        <td th:text="${student.studentId}"/>
+                        <td th:text="${student.first_name}+' '+${student.last_name}"/>
+                        <td th:text="${student.email}"/>
+                        <td class="grade" th:text="${student.mark}"/>
+                        <td><input type="checkbox"  th:name="id" th:value="${student.gradeId}"/> </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <a class="btn btn-success" th:href="@{/Admin/Courses}">Cancel Removing</a>
+        <input  class="btn btn-success" name="add" type="submit" />
+</div>
+</form>
+
+
+</div>
+
+
+
+
+<div th:replace="includes.html :: footer"></div>

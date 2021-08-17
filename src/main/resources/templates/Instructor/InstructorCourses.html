@@ -1,0 +1,34 @@
+<div th:replace="includes.html :: header"></div>
+
+
+<div th:replace="includes.html :: InstNavBar"></div>
+
+
+<div class="container">
+
+    <table class = "table table-striped table-hover">
+        <thead>
+        <th>Course ID</th>
+        <th>Course Name</th>
+        <th>Manage Enrolled Students</th>
+        </thead>
+        <tbody>
+        <tr>
+        <tr th:each="course : ${list}">
+
+                <td th:text="${course.id}" >${course.id}</td>
+                <td th:text="${course.name}">${course.name}</td>
+                <td><a class="btn btn-info" th:href="@{/Instructor/EnrolledStudents/(courseId=${course.id})}">Enrolled Students</a></td>
+
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
+<div th:replace="includes.html :: footer"></div>

@@ -1,0 +1,34 @@
+
+<div th:replace="includes.html :: header"></div>
+
+<div th:replace="includes.html :: StuNavBar"></div>
+
+
+<div class="container">
+
+
+  <table class = "table table-striped table-hover">
+    <thead>
+    <th>Course Name</th>
+    <th>Course Instructor</th>
+    <th>Instructor Email</th>
+    <th>Grade</th>
+    </thead>
+    <tbody>
+    <tr>
+      <tr th:each="course : ${list}">
+
+      <td th:text="${course.name}"/>
+      <td th:text="${course.first_name} +' '+ ${course.last_name} "/>
+      <td th:text="${course.email}"/>
+      <td th:text="${course.mark}"/>
+
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+<div th:replace="includes.html :: footer"></div>
+

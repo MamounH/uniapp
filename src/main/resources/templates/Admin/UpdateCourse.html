@@ -1,0 +1,46 @@
+<div th:replace="includes.html :: header"></div>
+
+
+<div th:replace="includes.html :: AdminNavBar"></div>
+
+
+<div class="container">
+
+
+
+    <form method="POST" th:object="${course}"  th:action="@{/Admin/UpdateCourse}">
+
+        <input type="hidden" name="id" th:value="${course.id}"/>
+
+        <fieldset class="form-group">
+            <label>New Course Name</label>
+            <input name="name" type="text" class="form-control" th:value="${course.name}"/>
+            <p class="text-warning" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" />
+
+            <BR/>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>New Course Instructor</label>
+            <input name="instructorId" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                   class="form-control" th:value="${course.instructorId}" />
+            <p class="text-warning" th:if="${#fields.hasErrors('instructorId')}" th:errors="*{instructorId}" />
+            <BR/>
+
+        </fieldset>
+
+
+        <a class="btn btn-success" th:href="@{/Admin/Courses}">Cancel Updating</a>
+        <input  class="btn btn-success" name="add" type="submit" />
+
+
+    </form>
+
+
+
+</div>
+
+
+
+<div th:replace="includes.html :: footer"></div>

@@ -1,0 +1,60 @@
+<div th:replace="includes.html :: header"></div>
+
+
+<div th:replace="includes.html :: AdminNavBar"></div>
+
+
+
+<div class="container">
+
+
+    <form th:action="@{/Admin/AddUser}" th:object="${user}" method="POST">
+
+
+            <label>User First Name</label>
+            <input name="first_name" type="text" th:value="${user.first_name}" class="form-control" />
+            <p class="text-warning" th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}" />
+            <BR/>
+
+
+            <label>User Last Name</label>
+            <input name="last_name" type="text" th:value="${user.last_name}" class="form-control" />
+            <p class="text-warning" th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}" />
+            <BR/>
+
+
+            <label>User Email</label>
+            <input name="email" type="text" th:value="${user.email}" class="form-control"/>
+            <p class="text-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" />
+            <BR/>
+
+
+            <label>User Password</label>
+            <input name="password" type="password" th:value="${user.password}" class="form-control" />
+            <p class="text-warning" th:if="${#fields.hasErrors('password')}" th:errors="*{password}" />
+             <BR/>
+
+            <fieldset class="form-group">
+              <label>User Role</label>
+            <INPUT TYPE="radio" name="role" th:field="*{role}"  th:value="ADMIN"/> Admin
+            <INPUT TYPE="radio" name="role" th:field="*{role}"  th:value="INSTRUCTOR"/> Instructor
+            <INPUT TYPE="radio" name="role" th:field="*{role}"  th:value="STUDENT" checked/> Student
+            </fieldset>
+
+        <a class="btn btn-success" th:href="@{/Admin/Users}">Cancel Adding</a>
+        <input  class="btn btn-success" name="add" type="submit" />
+
+
+    </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div th:replace="includes.html :: footer"></div>

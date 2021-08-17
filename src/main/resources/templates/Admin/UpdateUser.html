@@ -1,0 +1,59 @@
+<div th:replace="includes.html :: header"></div>
+
+
+<div th:replace="includes.html :: AdminNavBar"></div>
+
+
+
+<div class="container">
+
+    <form th:object="${user}" th:action="@{/Admin/UpdateUser}" method="POST" >
+
+        <input type="hidden" name="id" th:value="${user.id}"/>
+        <input type="hidden" name="role" th:value="${user.role}"/>
+        <input type="hidden" name="role" th:value="${user.password}"/>
+
+        <fieldset class="form-group">
+            <label>User First Name</label>
+            <input name="first_name" type="text" class="form-control" th:value="${user.first_name}" />
+            <p class="text-warning" th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}" />
+            <BR/>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>User Last Name</label>
+            <input name="last_name" type="text" class="form-control" th:value="${user.last_name}"/>
+            <p class="text-warning" th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}" />
+            <BR/>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>User Email</label>
+            <input name="email" type="text" class="form-control" th:value="${user.email}" />
+            <p class="text-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" />
+            <BR/>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>User New Password</label>
+            <input name="password" type="password" class="form-control" th:field="*{password}"  />
+            <p class="text-warning" th:if="${#fields.hasErrors('password')}" th:errors="*{password}" />
+            <BR/>
+        </fieldset>
+
+
+        <a class="btn btn-success" th:href="@{/Admin/Users}">Cancel Updating</a>
+        <input  class="btn btn-success" name="add" type="submit" />
+
+
+    </form>
+
+
+
+</div>
+
+
+<div th:replace="includes.html :: footer"></div>
