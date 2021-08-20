@@ -2,10 +2,8 @@ package com.atypon.uniapp.data.repository;
 
 import com.atypon.uniapp.data.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Set;
 
