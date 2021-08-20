@@ -6,7 +6,6 @@ import com.atypon.uniapp.data.repository.UserDataRepo;
 import com.atypon.uniapp.data.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -21,9 +20,8 @@ import javax.validation.Valid;
 public class UsersController {
 
 
-    private PasswordEncoder passwordEncoder;
     private UserDataRepo userDataRepo;
-    private UserAccountConfig userService;
+    private UserAccountConfig userAccountConfig;
 
     @GetMapping(value = "Users")
     protected String showAllUsers(ModelMap modelMap)  {
@@ -38,7 +36,6 @@ public class UsersController {
         return "/Admin/AddUser";
     }
 
-
     @PostMapping(value = "AddUser")
     protected String addNewUser(@ModelAttribute @Valid User user, BindingResult result) {
 
@@ -46,7 +43,7 @@ public class UsersController {
             result.rejectValue("email", "error.user", "An account already exists for this email.");
             return "/Admin/AddUser";
         }else{
-            return userService.addUser(user,result);
+            return userAccountConfig.addUser(user,result);
         }
     }
 
@@ -61,7 +58,7 @@ public class UsersController {
     protected String updateUser(@ModelAttribute @Valid User user, BindingResult result) {
 
         if (isValidEmail(user,result)){
-            return userService.updateUser(user,result);
+            return userAccountConfig.updateUser(user,result);
         } else
         {
             return "/Admin/UpdateUser";
@@ -71,7 +68,6 @@ public class UsersController {
 
 
     private boolean isValidEmail(User user, BindingResult result){
-
         if (userDataRepo.existsByEmail(user.getEmail())) {
             if(!userDataRepo.findById(user.getId()).getEmail().equalsIgnoreCase(user.getEmail())) {
                 result.rejectValue("email", "error.user", "An account already exists for this email.");

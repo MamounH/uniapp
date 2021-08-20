@@ -18,8 +18,9 @@ public interface UserDataRepo extends JpaRepository<User,Integer> {
 
     List<User> findByRole(String role);
 
-    @Query(value ="SELECT * FROM student_marks m JOIN users u ON u.id=m.student_id " +
-            " WHERE u.id NOT IN ( SELECT student_id from student_marks where course_id=?1) ",nativeQuery=true)
+    @Query(value ="select t1.* from users t1 where t1.role='STUDENT' AND not exists " +
+            "(select * from student_marks t2 where t1.id = t2.student_id and course_id=?1)",
+            nativeQuery=true)
     Set<User> getPossibleStudents(int id);
 
 
