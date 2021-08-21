@@ -16,7 +16,7 @@ The system has 3 levels of users: Students, Instructors, Admins.
 **Instructor**: 
 - Can only see their courses, students enrolled in these courses.
 - Assign grades to their students.
-- 
+
 **Student**: 
 - Can only view thier courses marks.
 
@@ -45,7 +45,10 @@ For Continuous Integration/Deployment i created a jenkins server on aws and link
 
 ![](Screenshots/JenkinsDashBoard.png)
 
-![Jenkins AWS Server Status](Screenshots/JenkinsStatus.png)
+   Jenkins AWS Server Status:
+![](Screenshots/JenkinsStatus.png)
+
+
 
 
 
