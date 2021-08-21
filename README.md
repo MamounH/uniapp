@@ -45,8 +45,16 @@ For Continuous Integration/Deployment i created a jenkins server on aws and link
 
 ![](Screenshots/JenkinsDashBoard.png)
 
-   Jenkins AWS Server Status:
+Jenkins AWS Server Status:
 ![](Screenshots/JenkinsStatus.png)
+
+Every Failure i have encountered was a closer step to sucess....
+![](Screenshots/JenkinsBuild.png)
+
+Deploying to web server: 
+![](Screenshots/JenkinsBuildSucess.png)
+
+![](Screenshots/CI CD Test.png)
 
 
 
