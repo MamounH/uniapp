@@ -29,9 +29,10 @@ The system has 3 levels of users: Students, Instructors, Admins.
 - Jenkins for CI/CD
 - GitHub for VS
 - AWS and Docker for deployment.
-- SSL digital certificate to encrypt trafic and help to secure information such as user data.
+- SSL digital certificate to encrypt trafic and help to secure information such as users data.
 
 ![](Screenshots/Pipeline.png)
+Simple Pipeline.
 
 ## AWS 
 
@@ -58,7 +59,7 @@ Deploying to web server:
 
 ## Docker
 
-Docker was used for the MySql Databaes, Thus providing a clean separation of concerns, CI/CD Friendly.
+Docker was used for the MySql Database, Thus providing a clean separation of concerns. Also its CI/CD Friendly.
 
 ![](Screenshots/docker.png)
 
