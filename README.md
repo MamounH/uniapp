@@ -54,7 +54,7 @@ Every Failure i have encountered was a closer step to sucess....
 Deploying to web server: 
 ![](Screenshots/JenkinsBuildSucess.png)
 
-![](Screenshots/CI CD Test.png)
+![](Screenshots/CI_CD_Test.png)
 
 
 
