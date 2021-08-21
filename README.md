@@ -87,20 +87,20 @@ To enable the website to move from HTTP to HTTPS i created my own SSl Certificat
 
 
 <p float="left">
-  <img src="/Screenshots/FailedLogin.png"width="270"   />
-  <img src="/Screenshots/AdminUsers.png" width="270"   />
-  <img src="/Screenshots/AdminCourses.png" width="270"  /> 
+  <img src="/Screenshots/UpdateGrade.png"width="270"   />
+  <img src="/Screenshots/StudentView.png" width="270"   />
+  <img src="/Screenshots/DeletingCourse.png" width="270"  /> 
 </p>
 
 <p float="left">
   <img src="/Screenshots/FailedLogin.png"width="270"   />
-  <img src="/Screenshots/AdminUsers.png" width="270"   />
-  <img src="/Screenshots/AdminCourses.png" width="270"  /> 
+  <img src="/Screenshots/ErrorMapping.png" width="270"   />
+  <img src="/Screenshots/FixBugJob.png" width="270"  /> 
 </p>
 
 
 
-
+For more screen shots click [here!](/Screenshots/)
 
 
 
