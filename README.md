@@ -35,9 +35,17 @@ The system has 3 levels of users: Students, Instructors, Admins.
 
 ## AWS 
 
-Amazon Web Services were used in the project for jenkins and deployment.
+Amazon Web Services were used in the project, as several instances were created for Jenkins Server and Web Servers.
 
 ![](Screenshots/aws.png)
+
+## Jenkins
+
+For Continuous Integration/Deployment i created a jenkins server on aws and linked it to the web servers on aws and to this GitHub repo. 
+
+![](Screenshots/JenkinsDashBoard.png)
+
+![Jenkins AWS Server Status](Screenshots/JenkinsStatus.png)
 
 
 
