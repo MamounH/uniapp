@@ -24,11 +24,26 @@ The system has 3 levels of users: Students, Instructors, Admins.
 - Java 16
 - Spring Core, Boot, MVC, Security, Data JPA
 - MySQL database (on a Docker Contatiner)
-- Thymeleaf rendring engine and Bootstrap CSS framework for the front-end
+- Thymeleaf rendring engine and Bootstrap CSS framework for the front-end, with Thymeleaf extras for security. 
 - Maven Build Tool
 - Jenkins for CI/CD
 - GitHub for VS
 - AWS and Docker for deployment.
+- SSL digital certificate to encrypt trafic and help to secure information such as user data.
 
 ![](Screenshots/Pipeline.png)
+
+## AWS 
+
+Amazon Web Services were used in the project for jenkins and deployment.
+
+![](Screenshots/aws.png)
+
+
+
+### Contact
+
+Mamoun Abu Koush - :e-mail: Mamounhayel@gmail.com
+
+LinkedIn: [Mamoun Hayel](https://www.linkedin.com/in/mamounhayel/)
 
