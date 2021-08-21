@@ -1,5 +1,5 @@
 # Atypon Java and DevOps Training  
-Atypon Web Project Using Spring, Spring Security, Spring Data JPA, Thymeleaf with Spring extras security extension. 
+Atypon Web Project Using Spring, Spring Security, Spring Data JPA, Thymeleaf with Spring extras security extension. The same project was implementd first using traditional MVC Servlets/ JSPs click [here](https://github.com/MamounH/WebProject) to view it.
 
 ![](Screenshots/login.png)
 
